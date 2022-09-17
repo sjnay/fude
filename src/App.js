@@ -1,3 +1,5 @@
 export default function App() {
-  return <></>
+  return <>
+  <h1>hi</h1>
+  </>
 }
