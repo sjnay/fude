@@ -25,22 +25,28 @@ const fetchBites = ()=>{
     fetch(URL+ `${search}`)
     .then((res)=>(res.json()))
     .then((json)=>{
-        console.log(json)
-
-        
+        setResults(json.hits)
     })
-
-
-
-
 }
 useEffect(fetchBites,[search])
 
+console.log(results)
+
+const resultList = results.map((bite,index)=>{
+    return(
+        
+        <p key={index} className='bite'>{bite.recipe.label} </p>
+    )
+})
 
 
 
 return(
-    <h1>hmm</h1>
+    <div className='search-results'>
+        <h1>Results for: '{search}'</h1>
+            {resultList}
+        
+    </div>
    
 
 
