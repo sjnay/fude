@@ -2,32 +2,35 @@ import {useState,useEffect} from 'react'
 import{useParams,Link} from 'react-router-dom'
 
 function BitePage(props){
+    const {id} = useParams()
+const [bite, setBite] = useState([props.bite[id]])
 
-const [bite, setBite] = useState([])
-const {id} = useParams()
-console.log(props.bite[id])
+
 
 useEffect(()=>{
-    setBite(props.bite[id])
-},[id])
-console.log(bite.recipe)
+    setBite(bite)
+},[])
+
+console.log(bite[0].recipe.label)
+
 
 const loaded = ()=>{
     return(
-    
-    <div>
-    <h1>{bite.recipe.label}</h1>
-    <img src={bite.recipe.image} alt={bite.recipe.label}></img>
-    </div>
-)}
+        <div>
+            <Link to='/findbite'>Back</Link>
+            <h1>{bite[0].recipe.label}</h1>
+        </div>
+)};
 const loading = ()=>{
+    return(
     <h1>Loading ......</h1>
+    )
+
+};
+return bite ? loaded(): loading()
 }
-return (
-    <div>
-    <Link to='/findbite'>Back</Link>
-    {bite ? loaded(): loading()}
-    </div>
-)}
+
+
+
 
 export default BitePage
