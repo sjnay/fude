@@ -6,7 +6,7 @@ function SearchBite(props){
 const resultBites = props.results.map((bite,id)=>{
     return(
         <div className='search-results'>
-        <Link to ={`/findbite/${id}`} key={id} className='bite'>{bite.recipe.label}</Link>
+        <a href ={`/findbite/${id}`} key={id} className='bite'>{bite.recipe.label}</a>
         <img src={bite.recipe.image} alt='puppy'/>
         </div>
     )

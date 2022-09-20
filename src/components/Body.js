@@ -28,6 +28,7 @@ const fetchBites = ()=>{
         console.log(json)
     setResults(json.hits)
     setBite(json.hits)
+    console.log(json.hits)
     })
 }
 useEffect(fetchBites,[search])
