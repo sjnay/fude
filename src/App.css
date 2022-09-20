@@ -22,3 +22,22 @@ main{
     grid-column: 2;
     grid-row: 2;
 }
+
+.search-body{
+    display: grid;
+    grid-template-columns: .5fr .75fr;
+}
+.results-container{
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    grid-column: 2;
+}
+.search-results{
+    display:grid;
+    grid-template-columns: 1fr .5fr;
+    width: 50%;
+    border: 2px solid black;
+}

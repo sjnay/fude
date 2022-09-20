@@ -1,3 +1,4 @@
+import { DataContext } from "data/DataContext"
 import SearchBite from "pages/SearchBite"
 import SearchHome from "pages/SearchHome"
 import BitePage from "pages/Bite"
@@ -8,18 +9,19 @@ const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=p
 
 
 
-function Body(){
 
+function Body(){
+    
+   
 const initialForm={
     querySearch:"taco", // will be props once home search is working
 }
 
+
+
 const [getResults, setResults] = useState([])
 const [bite, setBite] = useState([])
 const [search,setSearch] = useState(initialForm.querySearch)
-
-
-
 
 const fetchBites = ()=>{
     fetch(URL+`${search}`)
@@ -28,6 +30,7 @@ const fetchBites = ()=>{
         console.log(json)
     setResults(json.hits)
     setBite(json.hits)
+    setSearch(search)
     console.log(json.hits)
     })
 }
@@ -36,14 +39,16 @@ useEffect(fetchBites,[search])
 
     return (
     <div className='body'>
-    <h1>{search}</h1>
     
+    <DataContext.Provider value={search}>
 
     <Routes>
     <Route exact path='/' element={<SearchHome/>}/>
-    <Route exact path='/findbite' element={<SearchBite results={getResults} />}/>
+    <Route exact path='/findbite' element={<SearchBite search={search} results={getResults} />}/>
     <Route exact path='/findbite/:id' element={<BitePage bite={bite}/>}/>
     </Routes>
+    
+    </DataContext.Provider>
 
     </div>
 )}

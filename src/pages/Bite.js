@@ -14,33 +14,24 @@ console.log(props.bite)
 },100)
 })
 
-console.log(getRecipe[0].food)
+
 const Ingr = ()=>{
     return getRecipe?.map((item,index)=>{
  
     return(
         <div className= 'recipe-items'>
             <>{item.food}</>
-
         </div>
     )}
 )}
 
 
 const loaded = ()=>{
-    
-
-   
-    
-
-
     return(
-        
         <div>
-            
             <h1>{getBite.recipe.label}</h1>
             <img src={getBite.recipe.image} alt={getBite.recipe.label}/>
-            <div>
+            <div className='recipe-items-container'>
             <Ingr/>
             </div>
             
@@ -58,8 +49,9 @@ return (
     
    
     <div>
-    {getBite ? loaded(): loading()}
     <Link to='/findbite'>Back</Link>
+    {getBite ? loaded(): loading()}
+   
     </div>
 )
 }
