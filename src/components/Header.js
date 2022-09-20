@@ -1,8 +1,8 @@
-import {Link} from 'react-router-dom'
+
 function Header (){
     return (
    <header className='header'>
-    <Link className='find-bite'to="/findbite">find bite</Link>
+    <h1>füdE</h1>
     </header>
     
     )
