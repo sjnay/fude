@@ -1,12 +1,13 @@
 function SearchHome(){
     return(
         <form>
-<label></label>
+<label>
         <input 
         type='text'
         name='search'
         placeholder="search for bites"
         /> 
+</label>
         <button className="material-symbols-outlined" type='submit'>search</button>
         </form>
     )
