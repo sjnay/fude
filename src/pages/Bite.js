@@ -3,27 +3,32 @@ import{useParams,Link} from 'react-router-dom'
 
 function BitePage(props){
 const {id} = useParams()
-const [getBite, setBite] = useState(null)
-const [getRecipe, setRecipe] =useState(null)
-console.log(props.bite)
+const [getBite, setBite] = useState(props.results[id])
+const [getRecipe, setRecipe] =useState(props.results[id])
+console.log(props.results)
+console.log(props.search)
 
  useEffect(()=>{
     setTimeout(()=>{
-    setBite(props.bite[id])
-    setRecipe(props.bite[id].recipe.ingredients)
+    setBite(props.results[id])
+    setRecipe(props.results[id].recipe.ingredients)
 },100)
 })
 
 
-const Ingr = ()=>{
+
+const Directions = ()=>{
+    
     return getRecipe?.map((item,index)=>{
  
     return(
-        <div className= 'recipe-items'>
-            <>{item.food}</>
+        <div className= 'directions'>
+            <>{item.text}</>
         </div>
     )}
 )}
+
+
 
 
 const loaded = ()=>{
@@ -31,8 +36,10 @@ const loaded = ()=>{
         <div>
             <h1>{getBite.recipe.label}</h1>
             <img src={getBite.recipe.image} alt={getBite.recipe.label}/>
-            <div className='recipe-items-container'>
-            <Ingr/>
+            
+            <div className='directions-container'>
+                <Directions/>
+            <a href={getBite.recipe.url}>Make Bite</a>
             </div>
             
         </div>

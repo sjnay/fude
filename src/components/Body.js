@@ -1,56 +1,91 @@
 import { DataContext } from "data/DataContext"
 import SearchBite from "pages/SearchBite"
-import SearchHome from "pages/SearchHome"
+
 import BitePage from "pages/Bite"
-import {Routes,Route,Outlet} from 'react-router-dom'
-import{useState,useEffect} from 'react'
-const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&q=';
+import {Routes,Route,Outlet,Link} from 'react-router-dom'
+import{useState,useEffect,useContext} from 'react'
 
 
 
 
+function Search(props){
+    const [inputSearch,setInputSearch]=useState(null)
+const [search, setSearch]=useState(null)
 
-function Body(){
-    
+const onNewSearch=(e)=>{
+    e.preventDefault()
+console.log(e.target.value)
+    setInputSearch(e.target.value)
+
+}
+console.log(inputSearch)
+
+const submitSearch=(e)=>{
+    e.preventDefault(search)
+    setSearch(inputSearch)
+}
+console.log(search)
+
+
+
+return(
+    <div>
+
+
+
+
+<div className='body'>
    
-const initialForm={
-    querySearch:"taco", // will be props once home search is working
+<h1>Search for: {search}</h1>
+<div className='search'>
+ 
+<h1>search input</h1>
+<form onSubmit={submitSearch}>
+<input
+type='text'
+name='querySearch'
+onChange={onNewSearch}
+/>
+<button type='submit'>submit</button>
+</form>
+<DataContext.Provider value={search}>
+    <SearchBite/>
+</DataContext.Provider>
+
+</div>
+</div>
+</div>
+
+)
 }
 
 
+function Body(props){
 
-const [getResults, setResults] = useState([])
-const [bite, setBite] = useState([])
-const [search,setSearch] = useState(initialForm.querySearch)
-
-const fetchBites = ()=>{
-    fetch(URL+`${search}`)
-    .then((res)=>(res.json()))
-    .then((json)=>{
-        console.log(json)
-    setResults(json.hits)
-    setBite(json.hits)
-    setSearch(search)
-    console.log(json.hits)
-    })
-}
-useEffect(fetchBites,[search])
-
-
-    return (
-    <div className='body'>
+    console.log(props)
     
-    <DataContext.Provider value={search}>
-
-    <Routes>
-    <Route exact path='/' element={<SearchHome/>}/>
-    <Route exact path='/findbite' element={<SearchBite search={search} results={getResults} />}/>
-    <Route exact path='/findbite/:id' element={<BitePage bite={bite}/>}/>
-    </Routes>
     
-    </DataContext.Provider>
-
+    return(
+       
+       
+       
+       <div className='body'>
+   
+       
+           
+       
+        <Routes>
+            <Route exact path='/' element={<Search />}/>
+            <Route exact path='/findbite' element={<Search/>}/>
+            <Route exact path='findbite/:id' element={<BitePage/>}/>
+        </Routes>
+        
+       
+       
+    
     </div>
-)}
+   
+    )}
+    
 
 export default Body

@@ -3,8 +3,21 @@ main{
     grid-template-columns: 200px 1fr;
     grid-template-rows: 150px 1fr;
     height: 100%;
+    font-family: 'Shadows Into Light Two', cursive;
+    text-transform: lowercase;
 }
-
+input{
+    font-family: 'Shadows Into Light Two', cursive;
+    width: 30%;
+    height: 2%;
+    font-size: 1.5em;
+}
+button{
+    font-family: 'Shadows Into Light Two', cursive;
+}
+.search{
+    border:2px solid red;
+}
 .header{
     border: 2px solid black;
     grid-column: 2;
@@ -15,6 +28,7 @@ main{
     border: 2px solid black;
     grid-column: 1;
     grid-row: span 2;
+    font-size: 2em;
 }
 
 .body{
@@ -37,7 +51,12 @@ main{
 }
 .search-results{
     display:grid;
-    grid-template-columns: 1fr .5fr;
+    grid-template-columns: 1fr .39fr;
     width: 50%;
     border: 2px solid black;
+    border-radius: 2px;
+    margin: 3px;
+    padding:0px;
+    font-size: 2em;
+    
 }
