@@ -26,7 +26,7 @@ const loaded =()=>{
         return(
         <div className='search-results'>
         <Link to ={`/findbite/${id}`} key={id} className='bite'>{bite.recipe.label}</Link>
-        <img src={bite.recipe.images.THUMBNAIL.url} alt='puppy'key={bite.recipe.url}/>
+        <img src={bite.recipe.images.SMALL.url} alt='puppy'key={bite.recipe.url}/>
         </div>
     )
 })

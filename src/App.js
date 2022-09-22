@@ -1,7 +1,9 @@
 import './App.css'
 import Body from "components/Body"
-import Header from "components/Header"
+
 import Nav from "components/Nav"
+import{Route,Routes} from 'react-router-dom'
+
 
 
 
@@ -12,8 +14,7 @@ function App() {
    <main>
       <Nav/>
      
-      <Body/>
-    
+  <Body/>
     
   </main>
 )}
