@@ -1,8 +1,11 @@
 
-function Header (){
+function Header (props){
     return (
    <header className='header'>
-    <h1>füdE</h1>
+    <h1>showing results for: {props.search}</h1>
+    <div>
+        {props.input}
+    </div>
     </header>
     
     )

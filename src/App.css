@@ -1,64 +1,70 @@
-main{
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 150px 1fr;
-    height: 100%;
-    font-family: 'Shadows Into Light Two', cursive;
-    text-transform: lowercase;
-}
+
 input{
     font-family: 'Shadows Into Light Two', cursive;
-    width: 30%;
-    height: 2%;
-    font-size: 1.5em;
+  
 }
 button{
     font-family: 'Shadows Into Light Two', cursive;
 }
-.search{
-    border:2px solid red;
-}
+
 .header{
+    background-color: aqua;
     border: 2px solid black;
     grid-column: 2;
     grid-row: 1;
+    border-radius: 15px;
 }
 
 .nav{
-    border: 2px solid black;
-    grid-column: 1;
-    grid-row: span 2;
+    background-color: orchid;
     font-size: 2em;
-    display: flex;
-    flex-direction: column;
-}
-
-.body{
-    border: 2px solid black;
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.search-body{
+    
+    display: block;
     display: grid;
-    grid-template-columns: .5fr .75fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    display: inline;
 }
+
+.nav div{
+    grid-row: 1;
+    text-align: center;
+}
+
+
 .results-container{
-    background-color: orange;
+   background-color: blue;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     float: right;
     grid-column: 2;
+    height: 800px;
+    overflow: auto;
 }
 .search-results{
+    background-color: brown;
     display:grid;
-    grid-template-columns: 1fr .39fr;
-    width: 50%;
+    grid-template-rows: 1fr .39fr;
+    height: 200px;
+    width: 200px;
+    
+   
     border: 2px solid black;
     border-radius: 2px;
     margin: 3px;
     padding:0px;
-    font-size: 2em;
+    font-size: 1em;
     
+}
+
+.coming-soon{
+    text-align: center;
+}
+
+.bulldozer{
+   height: 100px;
+
 }

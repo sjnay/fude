@@ -1,6 +1,8 @@
-import {DataContext} from "data/DataContext"
+
 import {Link} from 'react-router-dom'
 import {useState,useEffect,useContext} from 'react'
+import SearchForm from './SearchForm'
+import BitePage from './BitePage'
 
 
 
@@ -8,9 +10,11 @@ import {useState,useEffect,useContext} from 'react'
 function SearchBite(props){
    
     const [getResults, setResults] = useState([])
-    
+    const [search,setSearch]=useState(props.search)
+    console.log(props.search)
+    console.log(search)
     useEffect(()=>{
-       
+       setSearch(props.search)
         setResults(props.results)
      
     })
@@ -40,15 +44,16 @@ const loading = ()=>{
 
 
 return  (
-    <div className='search-body'>
+   
        
-       
+     
     <div className='results-container'>
    
     {getResults ? loaded(): loading()}
-    
+   
     </div>
-    </div>
+  
+  
   
 )
 }
