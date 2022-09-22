@@ -29,6 +29,8 @@ button{
     grid-column: 1;
     grid-row: span 2;
     font-size: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
 .body{

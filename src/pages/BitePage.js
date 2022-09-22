@@ -4,16 +4,16 @@ import{useParams,Link} from 'react-router-dom'
 function BitePage(props){
 const {id} = useParams()
 const [getBite, setBite] = useState(props.results[id])
-const [getRecipe, setRecipe] =useState(props.results[id])
-console.log(props.results)
-console.log(props.search)
+const [getRecipe, setRecipe] =useState(props.results[id].recipe.ingredients)
+console.log(props.results[id])
+
 
  useEffect(()=>{
     setTimeout(()=>{
     setBite(props.results[id])
     setRecipe(props.results[id].recipe.ingredients)
 },100)
-})
+},[id,props.results])
 
 
 
@@ -39,7 +39,7 @@ const loaded = ()=>{
             
             <div className='directions-container'>
                 <Directions/>
-            <a href={getBite.recipe.url}>Make Bite</a>
+            <a target="_blank"href={getBite.recipe.url}>Make Bite</a>
             </div>
             
         </div>

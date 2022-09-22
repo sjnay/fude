@@ -1,88 +1,82 @@
-import { DataContext } from "data/DataContext"
 import SearchBite from "pages/SearchBite"
-
-import BitePage from "pages/Bite"
+import SearchForm from "pages/SearchForm"
+import BitePage from "pages/BitePage"
 import {Routes,Route,Outlet,Link} from 'react-router-dom'
-import{useState,useEffect,useContext} from 'react'
+import{useState,useEffect} from 'react'
+const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&q='
 
 
 
 
-function Search(props){
-    const [inputSearch,setInputSearch]=useState(null)
-const [search, setSearch]=useState(null)
-
-const onNewSearch=(e)=>{
-    e.preventDefault()
-console.log(e.target.value)
-    setInputSearch(e.target.value)
-
-}
-console.log(inputSearch)
-
-const submitSearch=(e)=>{
-    e.preventDefault(search)
-    setSearch(inputSearch)
-}
-console.log(search)
-
-
-
-return(
-    <div>
-
-
-
-
-<div className='body'>
-   
-<h1>Search for: {search}</h1>
-<div className='search'>
- 
-<h1>search input</h1>
-<form onSubmit={submitSearch}>
-<input
-type='text'
-name='querySearch'
-onChange={onNewSearch}
-/>
-<button type='submit'>submit</button>
-</form>
-<DataContext.Provider value={search}>
-    <SearchBite/>
-</DataContext.Provider>
-
-</div>
-</div>
-</div>
-
-)
-}
-
-
-function Body(props){
-
-    console.log(props)
+function Body(){
+    const [inputSearch,setInputSearch]=useState("chicken")
+    const [search, setSearch]=useState([])
+    const [getResults, setResults] = useState()
     
+    const onNewSearch=(e)=>{
+        e.preventDefault()
+        setInputSearch(e.target.value)
+    }
+
+    console.log(inputSearch)
     
-    return(
-       
-       
-       
-       <div className='body'>
-   
-       
-           
-       
-        <Routes>
-            <Route exact path='/' element={<Search />}/>
-            <Route exact path='/findbite' element={<Search/>}/>
-            <Route exact path='findbite/:id' element={<BitePage/>}/>
-        </Routes>
+    // const submitSearch=(e)=>{
+    //     e.preventDefault()
+    //     setSearch(inputSearch)
         
-       
-       
+    // }
+
+    const onSubmit =(e)=>{
+        e.preventDefault()
+        console.log('did not refresh')
+        setSearch(inputSearch)
+    }
+
     
+
+   
+const fetchBites = ()=>{
+        
+        fetch(URL+`${search}`)
+        .then((res)=>(res.json()))
+        .then((json)=>{
+            console.log(json)
+           setResults(json.hits)
+        })
+    }
+    useEffect(fetchBites,[search])
+    
+   console.log(getResults)
+    return(
+      
+    <div>
+    <div className='search'>
+     
+    <h1>Search for: {search}</h1>
+    
+  <div>
+        <form onSubmit={onSubmit}>
+            <input
+            type='text'
+            name='querySearch'
+            onChange={onNewSearch}
+    
+            />
+            <button type='submit'>search</button>
+    </form>
+    </div>
+    </div>
+       
+       
+     <div className='body'>
+   
+       <Routes>
+            <Route exact path='/findbite' element={<SearchBite results={getResults}/>}/>
+            <Route exact path='/findbite/:id' element={<BitePage results={getResults} />}/>
+            
+        </Routes>
+        <Outlet/>
+    </div>
     </div>
    
     )}
