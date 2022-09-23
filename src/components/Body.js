@@ -4,8 +4,8 @@ import Home from "pages/Home"
 import {Routes,Route} from 'react-router-dom'
 import{useState,useEffect} from 'react'
 import ComingSoon from "pages/ComingSoon"
-const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&random=true&q='
 
+const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&random=true&q='
 
 
 
@@ -21,7 +21,6 @@ function Body(){
         e.preventDefault()
         setInputSearch(e.target.value)
        
-        console.log(e.target.type)
     }
 
     
@@ -29,7 +28,7 @@ function Body(){
    
     const onSubmit =(e)=>{
         e.preventDefault()
-        console.log('did not refresh')
+       
         setSearch(inputSearch)
        
 
@@ -49,7 +48,7 @@ const fetchBites = ()=>{
     }
     useEffect(fetchBites,[search])
 
-    console.log(count.count)
+    
     
  function NoResults(){
     if(count.count === 0)
@@ -68,7 +67,7 @@ const fetchBites = ()=>{
             
     <div>
        
-   <div className='form-container'>
+    <div className='form-container'>
         <form onSubmit={onSubmit} >
             <input
             type='text'
@@ -79,9 +78,7 @@ const fetchBites = ()=>{
          
             <button type='submit'>search</button>
         </form>
-     
-       
-       </div>
+    </div>
    
     <div className='noResult-container'>
        <NoResults/>

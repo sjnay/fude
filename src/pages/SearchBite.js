@@ -4,14 +4,12 @@ import {useState,useEffect} from 'react'
 
 
 
-
-
 function SearchBite(props){
    
     const [getResults, setResults] = useState([])
     const [search,setSearch]=useState(props.search)
-    console.log(props.search)
-    console.log(search)
+   
+    
     useEffect(()=>{
        setSearch(props.search)
         setResults(props.results)

@@ -5,7 +5,7 @@ function BitePage(props){
 const {id} = useParams()
 const [getBite, setBite] = useState(props.results[id])
 const [getRecipe, setRecipe] =useState(props.results[id].recipe.ingredients)
-console.log(props.results[id])
+
 
 
  useEffect(()=>{
