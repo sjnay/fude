@@ -10,11 +10,12 @@ function SearchBite(props){
     const [search,setSearch]=useState(props.search)
    
     
+
     useEffect(()=>{
        setSearch(props.search)
         setResults(props.results)
      
-    },[props.search,props.results])
+    },[search,props.search,props.results])
 
 
 

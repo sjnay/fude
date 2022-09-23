@@ -5,7 +5,7 @@ import {Routes,Route} from 'react-router-dom'
 import{useState,useEffect} from 'react'
 import ComingSoon from "pages/ComingSoon"
 
-const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&random=true&q='
+const URL = process.env.REACT_APP_API_KEY || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&random=true&q='
 
 
 
