@@ -18,9 +18,7 @@ const [getRecipe, setRecipe] =useState(props.results[id].recipe.ingredients)
 
 
 const Directions = ()=>{
-    
     return getRecipe?.map((item,index)=>{
- 
     return(
         <div className= 'directions'>
             <>{item.text}</>

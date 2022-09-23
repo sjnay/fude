@@ -7,8 +7,6 @@ import ComingSoon from "pages/ComingSoon"
 
 const URL = process.env.REACT_APP_API_KEY || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&random=true&q='
 
-
-
 function Body(){
     
     const [inputSearch,setInputSearch]=useState("chicken")
@@ -20,19 +18,12 @@ function Body(){
     const onNewSearch=(e)=>{
         e.preventDefault()
         setInputSearch(e.target.value)
-       
     }
 
     
-    
-   
     const onSubmit =(e)=>{
         e.preventDefault()
-       
-        setSearch(inputSearch)
-       
-
-       
+       setSearch(inputSearch)
     }
 
    
@@ -58,9 +49,7 @@ const fetchBites = ()=>{
         <p>hungry füde? find a bite!</p>
         </div>
     )
-
-
-   }
+}
 
         return(
 
@@ -84,17 +73,14 @@ const fetchBites = ()=>{
        <NoResults/>
        </div>
    
-        <div>
-    
        
-       
-     <Routes>
+    <Routes>
             <Route exact path='/' element={<Home/>}/>
             <Route exact path='/findbite' element={<SearchBite search={search} results={getResults}/>}/>
             <Route exact path='/findbite/:id' element={<BitePage search={search}results={getResults} />}/>
             <Route exact path='*' element={<ComingSoon/>}/>
     </Routes>
-    </div>
+   
     </div>
   
    
