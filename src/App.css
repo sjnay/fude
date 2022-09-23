@@ -1,55 +1,76 @@
 main{
     font-family: 'Heebo', sans-serif;
     font-weight: 100;
+    text-transform: lowercase;
+   
+}
+a {
+    text-decoration: none;
+}
+nav a{
+    text-decoration: none;
+    padding: 10px;
+}
+/* search form */
+
+.form-container{
+    background-color: red;
+    
+    display: flex;
+    justify-content: center;
+    justify-self: center;
 }
 input{
     font-family: 'Nanum Pen Script', cursive;
+    height: 50px;
+    width: 250px;
+    font-size: 25px;
+
   
 }
 button{
     font-family: 'Nanum Pen Script', cursive;
+    height:50px;
+    width: 150px;
+    font-size: 25px;
+    margin: 10px;
+    padding:5px;
 }
-
+/* end search form */
 .header{
-    background-color: aqua;
-    border: 2px solid black;
+    
     grid-column: 2;
     grid-row: 1;
    font-size: 10px;
    font-weight: 100;
-   font-family: 'Heebo', sans-serif;
-    font-weight: 100;
-    
+ 
 }
 
 .nav{
-    background-color: orchid;
+    
     font-size: 2em;
     display: block;
     display: grid;
     grid-template-rows: 1fr 1fr;
     text-align: center;
     display: inline;
-    font-family: 'Sarabun', sans-serif;
+    
 }
 
 .nav div{
     grid-row: 1;
     text-align: center;
 }
-
-
+/* results page */
 .results-container{
-   background-color: blue;
+   
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    float: right;
-    grid-column: 2;
-    height: 500px;
-    width: 800px;
+    height: 800px;
+    width: 1200px;
     overflow: auto;
 }
 
@@ -83,22 +104,33 @@ button{
     border-radius: 10px;
    
 }
+/* end results page */
+
+/* bite show page */
+
+.bite-page{
+    background-image: url('https://images.unsplash.com/photo-1600493505423-474fea65ad9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');
+}
 
 
+/* end bite show page */
+
+/* misc page */
 
 .coming-soon{
     text-align: center;
 }
+
 
 .bulldozer{
    height: 100px;
 
 }
 
+/* end misc page */
 
-.directions-container{
-    background-image: url('https://images.rawpixel.com/dark_image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcGYtczEwMC1wYS00MjE3XzEucG5n.png?s=fRwlkTo-qzg0CFTbX3-SI_LT1OgSXfucivY4aMUvTcs');
-}
+
+
 
 
 

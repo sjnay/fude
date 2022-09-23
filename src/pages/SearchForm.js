@@ -56,7 +56,9 @@ return(
         onChange={onNewSearch}
         />
         <button type='submit'>search</button>
+        <button type='submit'>new search</button>
     </form>
+
 </div>
 
 </div>

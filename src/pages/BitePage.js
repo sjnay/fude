@@ -33,13 +33,13 @@ const Directions = ()=>{
 
 const loaded = ()=>{
     return(
-        <div>
+        <div >
             <h1>{getBite.recipe.label}</h1>
             <img src={getBite.recipe.image} alt={getBite.recipe.label}/>
             
             <div className='directions-container'>
                 <Directions/>
-            <a target="_blank"href={getBite.recipe.url}>Make Bite</a>
+            <a target="_blank"rel="noreferrer" href={getBite.recipe.url}>Make Bite</a>
             </div>
             
         </div>
@@ -55,7 +55,7 @@ const loading = ()=>{
 return (
     
    
-    <div>
+    <div className='bite-page'>
     <Link to='/findbite'>Back</Link>
     {getBite ? loaded(): loading()}
    
