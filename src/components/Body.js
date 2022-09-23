@@ -1,8 +1,6 @@
-import Header from "./Header"
 import SearchBite from "pages/SearchBite"
-import SearchForm from "pages/SearchForm"
 import BitePage from "pages/BitePage"
-import {Routes,Route,Outlet,Link} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import{useState,useEffect} from 'react'
 import ComingSoon from "pages/ComingSoon"
 const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=public&app_id=a65fce94&app_key=4dff9ac63074ea67a3c11227a7e44603&random=true&q='
@@ -10,7 +8,7 @@ const URL = process.env.API_URL || 'https://api.edamam.com/api/recipes/v2?type=p
 
 
 
-function Body(props){
+function Body(){
     
     const [inputSearch,setInputSearch]=useState("chicken")
     const [search, setSearch]=useState([])

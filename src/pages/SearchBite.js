@@ -1,8 +1,7 @@
 
 import {Link} from 'react-router-dom'
-import {useState,useEffect,useContext} from 'react'
-import SearchForm from './SearchForm'
-import BitePage from './BitePage'
+import {useState,useEffect} from 'react'
+
 
 
 

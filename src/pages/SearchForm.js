@@ -1,9 +1,7 @@
-import { DataContext } from 'data/DataContext'
-import {Routes,Route,Outlet,Link} from 'react-router-dom'
-import {useState,useContext,useEffect} from 'react'
-import SearchBite from './SearchBite'
-import BitePage from './BitePage'
-import ComingSoon from './ComingSoon'
+
+
+import {useState,useEffect} from 'react'
+
 
 function SearchForm(props){
 const [inputSearch,setInputSearch]=useState([])
