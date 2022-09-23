@@ -3,9 +3,8 @@
 
 React Application intended to act as a recipe finder and eventually a virtual cookbook!
 
-<img width="1360" alt="Screen Shot 2022-09-23 at 9 38 35 AM" src="https://user-images.githubusercontent.com/109879644/191999031-32d1a4b7-22e1-42bd-830d-3a86c7ba09c0.png">
-
-<img width="1328" alt="Screen Shot 2022-09-23 at 9 39 29 AM" src="https://user-images.githubusercontent.com/109879644/191999050-e02a334d-c015-4eb1-9409-841aa05e2a68.png">
+## Link to Project
+https://frontend--euphonious-maamoul-feca2c.netlify.app/findbite
 
 
 ## API
