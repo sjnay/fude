@@ -1,5 +1,6 @@
 import SearchBite from "pages/SearchBite"
 import BitePage from "pages/BitePage"
+import Home from "pages/Home"
 import {Routes,Route} from 'react-router-dom'
 import{useState,useEffect} from 'react'
 import ComingSoon from "pages/ComingSoon"
@@ -55,7 +56,7 @@ const fetchBites = ()=>{
     return(
         <div className="noResults">
             <div className= 'arrow'></div>
-        <p>hungry? find a bite!</p>
+        <p>hungry füde? find a bite!</p>
         </div>
     )
 
@@ -91,6 +92,7 @@ const fetchBites = ()=>{
        
        
      <Routes>
+            <Route exact path='/' element={<Home/>}/>
             <Route exact path='/findbite' element={<SearchBite search={search} results={getResults}/>}/>
             <Route exact path='/findbite/:id' element={<BitePage search={search}results={getResults} />}/>
             <Route exact path='*' element={<ComingSoon/>}/>

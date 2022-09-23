@@ -8,7 +8,7 @@ function Nav(){
 
         
         <div className="fude">
-             hi füde
+             füde
         </div>
 
         <div className='links'>
