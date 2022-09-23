@@ -12,9 +12,8 @@ function App() {
   
   return(
    <main>
-      <Nav/>
-     
-  <Body/>
+     <Nav/>
+     <Body/>
     
   </main>
 )}

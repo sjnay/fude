@@ -8,13 +8,13 @@ function Nav(){
 
         
         <div className="fude">
-             hi fudE
+             hi füde
         </div>
 
         <div className='links'>
-        <Link to='/findbite'>findbitE </Link>
-        <Link to='/mybites'>mybitEs </Link>
-        <Link to='/addbite'>addbitE </Link>
+        <Link to='/findbite'>findbite </Link>
+        <Link to='/mybites'>mybites </Link>
+        <Link to='/addbite'>addbite </Link>
         </div>
        
     </nav>

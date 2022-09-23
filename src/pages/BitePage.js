@@ -33,32 +33,36 @@ const Directions = ()=>{
 
 const loaded = ()=>{
     return(
-        <div >
-            <h1>{getBite.recipe.label}</h1>
+        <div className='bite-card'>
+            
+        <div className='bite-image-title' >
+            
             <img src={getBite.recipe.image} alt={getBite.recipe.label}/>
-            
-            <div className='directions-container'>
+                 
+        </div>
+            <div className='bite-directions'>
                 <Directions/>
-            <a target="_blank"rel="noreferrer" href={getBite.recipe.url}>Make Bite</a>
+            <a className='make-bite' target="_blank"rel="noreferrer" href={getBite.recipe.url}>Make Bite</a>
             </div>
-            
         </div>
     )
 };
 const loading = ()=>{
     return(
-    <h1>Loading ......</h1>
+    <h1>bite is loading ......</h1>
     )
 
 };
 
 return (
-    
+    <div className='bite-show'>
+    <Link className='back' to='/findbite'>Back</Link>
+    <div className='bite-container'>
+    <p className="bite-name">{getBite.recipe.label}</p>
    
-    <div className='bite-page'>
-    <Link to='/findbite'>Back</Link>
     {getBite ? loaded(): loading()}
    
+    </div>
     </div>
 )
 }

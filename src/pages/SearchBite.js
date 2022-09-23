@@ -45,7 +45,7 @@ const loading = ()=>{
 
 return  (
    
-       
+       <div className='results'>
      
     <div className='results-container'>
    
@@ -53,7 +53,7 @@ return  (
    
     </div>
   
-  
+    </div>
   
 )
 }

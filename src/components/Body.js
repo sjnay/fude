@@ -15,6 +15,7 @@ function Body(props){
     const [inputSearch,setInputSearch]=useState("chicken")
     const [search, setSearch]=useState([])
     const [getResults, setResults] = useState()
+    const [count,setCount]=useState(0)
   
     
     const onNewSearch=(e)=>{
@@ -43,16 +44,31 @@ const fetchBites = ()=>{
         fetch(URL+`${search}`)
         .then((res)=>(res.json()))
         .then((json)=>{
-            console.log(json)
+            setCount(json)
            setResults(json.hits)
         })
     }
     useEffect(fetchBites,[search])
+
+    console.log(count.count)
     
-   
+ function NoResults(){
+    if(count.count === 0)
+    return(
+        <div className="noResults">
+            <div className= 'arrow'></div>
+        <p>hungry? find a bite!</p>
+        </div>
+    )
+
+
+   }
 
         return(
+
+            
     <div>
+       
    <div className='form-container'>
         <form onSubmit={onSubmit} >
             <input
@@ -65,14 +81,15 @@ const fetchBites = ()=>{
             <button type='submit'>search</button>
         </form>
      
-        <button onClick={(e)=>{console.log(e.target)}}type='submit'>new search</button>
+       
        </div>
    
-  
-
+    <div className='noResult-container'>
+       <NoResults/>
+       </div>
    
         <div>
-    <Header search={search}  />
+    
        
        
      <Routes>
