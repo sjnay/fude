@@ -16,7 +16,7 @@ function SearchBite(props){
        setSearch(props.search)
         setResults(props.results)
      
-    })
+    },[props.search,props.results])
 
 
 

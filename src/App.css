@@ -114,6 +114,7 @@ button{
     width: 200px;
     font-family: 'Heebo', sans-serif;
     font-weight: 100;
+    text-decoration: none;
     
 }
 .search-results .bite:hover{
@@ -154,8 +155,8 @@ button{
     text-align: center;
     font-size: 6vh;
     margin-top:5vh ;
-    text-shadow: 2px 1px rgb(77, 95, 71);
-    font-weight: 200;
+    text-shadow: 2px 2px rgb(77, 95, 71);
+    font-weight: 500;
    
 }
 .bite-show{
